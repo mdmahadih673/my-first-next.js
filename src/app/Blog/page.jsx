@@ -54,13 +54,13 @@ const blogsData = [
 
 
 const blogPage = () => {
-    return (
-        <div className="grid grid-cols-3 gap-4 p-4">
-            {
-                blogsData.map(blog => <Post key={blog.id} blog={blog} ></Post>)
-            }
-        </div>
-    );
+  return (
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        blogsData.map((blog) => <Post key={blog.id} blog={blog} />)
+      }
+    </div>
+  );
 };
 
 export default blogPage;

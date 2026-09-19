@@ -1,67 +1,49 @@
-import React from 'react';
-
 const FullDeletis = ({ post }) => {
     return (
-        <div>
-            <h1 className="bg-blue-50 text-blue-600 p-4 m-2 rounded-2xl text-center">Post Details</h1>
-            <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-
-                {/* Category & Read Time */}
-                <div className="flex items-center justify-between border-b border-gray-100 px-6 py-4">
-                    <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-600">
+        <article className="mx-auto max-w-4xl overflow-hidden rounded-2xl bg-[#141C26] ring-1 ring-white/10">
+            <header className="border-b border-white/10 bg-[#18212C] px-6 py-8 sm:px-10">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                    <span className="inline-flex rounded-full bg-[#1E2B38] px-3 py-1 text-xs font-semibold text-[#5EC8B7] ring-1 ring-white/10">
                         {post.category}
                     </span>
 
-                    <span className="text-xs text-gray-500">
+                    <span className="text-xs text-[#7C8C9B]">
                         {post.readTime}
                     </span>
                 </div>
 
-                {/* Blog Details */}
-                <div className="flex flex-1 flex-col p-6">
+                <h1 className="mt-6 text-3xl font-bold leading-tight text-[#EAF0F5] sm:text-4xl">
+                    {post.title}
+                </h1>
 
-                    <h2 className="mb-3 text-2xl font-bold leading-tight text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
-                        {post.title}
-                    </h2>
+                <p className="mt-4 max-w-3xl text-base leading-7 text-[#9AACBC]">
+                    {post.description}
+                </p>
 
-                    <p className="mb-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                        {post.description}
-                    </p>
+                <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[#7C8C9B]">
+                    <span className="font-medium text-[#D6E0E8]">{post.author}</span>
+                    <span aria-hidden className="text-white/20">|</span>
+                    <span>{post.date}</span>
+                </div>
+            </header>
 
-                    {/* Author & Date */}
-                    <div className="mt-auto border-t border-gray-100 pt-4">
-                        <div className="flex items-center justify-between">
-                            <div>
-                                <p className="text-sm font-semibold text-gray-900">
-                                    {post.author}
-                                </p>
+            <div className="px-6 py-8 sm:px-10 sm:py-10">
+                <div className="whitespace-pre-line text-base leading-8 text-[#BACAD7]">
+                    {post.content}
+                </div>
 
-                                <p className="mt-1 text-xs text-gray-500">
-                                    {post.date}
-                                </p>
-                            </div>
-
-                            <span className="text-xs font-medium text-gray-500">
-                                {post.tags[0]}
-                            </span>
-                        </div>
-                    </div>
-
-                    {/* Tags */}
-                    <div className="mt-4 flex flex-wrap gap-2">
-                        {post.tags.map((tag) => (
-                            <span
-                                key={tag}
-                                className="rounded-md bg-gray-100 px-2.5 py-1 text-xs text-gray-600"
-                            >
-                                #{tag}
-                            </span>
-                        ))}
-                    </div>
-
+                <div className="mt-10 flex flex-wrap gap-2 border-t border-white/10 pt-6">
+                    {post.tags.map((tag) => (
+                        <span
+                            key={tag}
+                            className="rounded-md bg-[#1E2B38] px-2.5 py-1 text-xs text-[#BACAD7]"
+                        >
+                            #{tag}
+                        </span>
+                    ))}
                 </div>
             </div>
-        </div>
+        </article>
     );
 };
 
