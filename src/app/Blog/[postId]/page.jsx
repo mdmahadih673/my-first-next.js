@@ -151,7 +151,6 @@ const postDetalisPage = async ({ params }) => {
 
     return (
         <div>
-            <h1>Post Details</h1>
             <FullDeletis post={post}></FullDeletis>
             
         </div>

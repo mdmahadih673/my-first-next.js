@@ -3,7 +3,7 @@ import React from 'react';
 const FullDeletis = ({ post }) => {
     return (
         <div>
-            <h1>Post Details</h1>
+            <h1 className="bg-blue-50 text-blue-600 p-4 m-2 rounded-2xl text-center">Post Details</h1>
             <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
 
                 {/* Category & Read Time */}
