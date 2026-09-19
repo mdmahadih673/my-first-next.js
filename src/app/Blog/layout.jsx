@@ -1,9 +1,10 @@
 import React, { Children } from 'react';
 
-const blogLayoutPage = ({ Children }) => {
+const blogLayoutPage = ({ children }) => {
     return (
         <div>
-            {Children}
+            <h1>Blog Layout</h1>
+            {children}
         </div>
     );
 };
